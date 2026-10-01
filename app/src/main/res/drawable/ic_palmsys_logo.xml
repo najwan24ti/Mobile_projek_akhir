@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- batang -->
+    <path
+        android:fillColor="#F9A825"
+        android:pathData="M22,44 C22,36 23,28 24.2,21 L27,21.5 C26,29 26,36 27,44 Z" />
+
+    <!-- pelepah -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C20,13 11,12 4,18 C11,17 19,18 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C30,13 39,12 45,18 C38,17 31,18 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C23,12 17,6 9,6 C15,9 19,14 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C27,12 33,6 41,6 C35,9 31,14 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C18,20 11,24 8,31 C13,26 19,23 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C32,20 39,24 42,31 C37,26 31,23 25,21 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M25,21 C23,14 24,8 25,3 C27,8 27,14 25,21 Z" />
+
+    <!-- buah sawit -->
+    <path
+        android:fillColor="#F9A825"
+        android:pathData="M25.5,22.5 m-2.6,0 a2.6,2.6 0 1,0 5.2,0 a2.6,2.6 0 1,0 -5.2,0" />
+</vector>

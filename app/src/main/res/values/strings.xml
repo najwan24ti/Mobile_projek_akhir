@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">najwan_2Tif</string>
+
+    <string name="palmsys_name">PalmSys</string>
+    <string name="palmsys_tagline">Sistem Informasi Perkebunan Sawit</string>
+    <string name="login_title">Selamat Datang</string>
+    <string name="login_subtitle">Masuk untuk melanjutkan ke akun Anda</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_remember">Ingat saya</string>
+    <string name="login_forgot">Lupa password?</string>
+    <string name="login_button">Masuk</string>
+    <string name="login_footer">PalmSys v1.0 · © 2026</string>
+    <string name="login_error_username">Username wajib diisi</string>
+    <string name="login_error_password">Password wajib diisi</string>
+    <string name="login_success">Selamat datang, %1$s</string>
+    <string name="login_forgot_info">Hubungi admin untuk reset password</string>
+
+    <string name="deskripsi">
+
+        4年後に日本へ行きたいです
+    </string>
+</resources>
