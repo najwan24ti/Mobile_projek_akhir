@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -11,10 +12,12 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.BundleCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.najwan_2tif.R
 import com.example.najwan_2tif.databinding.ActivityBerandaBinding
 import com.example.najwan_2tif.databinding.ItemTransaksiBinding
+import com.example.najwan_2tif.palmsys.komponen.LiquidGlassNav
 import com.example.najwan_2tif.palmsys.penjualan.CatatPenjualanActivity
 import com.example.najwan_2tif.palmsys.profil.ProfilActivity
 import com.example.najwan_2tif.palmsys.transaksi.TransaksiActivity
@@ -73,9 +76,14 @@ class BerandaActivity : BaseActivity() {
         binding = ActivityBerandaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val jarakNavBawah = (binding.navigasiBawah.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(bars.left, bars.top, bars.right, 0)
+            // Nav kaca melayang di atas garis navigasi HP
+            binding.navigasiBawah.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+                bottomMargin = jarakNavBawah + bars.bottom
+            }
             insets
         }
 
@@ -93,20 +101,40 @@ class BerandaActivity : BaseActivity() {
         binding.txtAvatar.setOnClickListener { bukaProfil() }
         binding.txtLihatSemua.setOnClickListener { bukaSemuaTransaksi() }
 
-        binding.navigasiBawah.selectedItemId = R.id.nav_beranda
-        binding.navigasiBawah.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_beranda -> true
-                R.id.nav_transaksi -> {
+        tampilkanNavigasiBawah()
+    }
+
+    /** Navigasi bawah Liquid Glass. Tab selain Beranda membuka halaman lain, jadi gelembung kembali ke Beranda. */
+    private fun tampilkanNavigasiBawah() {
+        binding.navigasiBawah.aturTab(
+            listOf(
+                LiquidGlassNav.Tab(R.drawable.ic_home, R.string.nav_beranda),
+                LiquidGlassNav.Tab(R.drawable.ic_swap, R.string.nav_transaksi),
+                LiquidGlassNav.Tab(R.drawable.ic_park, R.string.nav_kebun),
+                LiquidGlassNav.Tab(R.drawable.ic_bar_chart, R.string.nav_laporan),
+                LiquidGlassNav.Tab(R.drawable.ic_person, R.string.nav_profil)
+            ),
+            terpilih = TAB_BERANDA
+        )
+        // Isi halaman di belakang bar dipakai sebagai "bahan" kaca
+        binding.navigasiBawah.sumberLatar = binding.main
+        binding.navigasiBawah.onTabDipilih = { tab ->
+            when (tab) {
+                TAB_BERANDA -> true
+                TAB_TRANSAKSI -> {
                     bukaSemuaTransaksi()
                     false
                 }
-                R.id.nav_profil -> {
+                TAB_PROFIL -> {
                     bukaProfil()
                     false
                 }
+                TAB_KEBUN -> {
+                    segeraHadir(getString(R.string.nav_kebun))
+                    false
+                }
                 else -> {
-                    segeraHadir(item.title.toString())
+                    segeraHadir(getString(R.string.nav_laporan))
                     false
                 }
             }
@@ -209,6 +237,10 @@ class BerandaActivity : BaseActivity() {
         const val EXTRA_USERNAME = "extra_username"
         const val EXTRA_AKUN = "extra_akun"
         private const val STATE_SALDO = "state_saldo"
+        private const val TAB_BERANDA = 0
+        private const val TAB_TRANSAKSI = 1
+        private const val TAB_KEBUN = 2
+        private const val TAB_PROFIL = 4
         private const val STATE_TRANSAKSI = "state_transaksi"
         private const val MAKS_TRANSAKSI = 4
     }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_beranda"
-    android:orientation="vertical"
     tools:context=".palmsys.beranda.BerandaActivity">
 
     <ScrollView
+        android:id="@+id/gulir"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
             android:paddingTop="12dp"
-            android:paddingBottom="24dp">
+            android:paddingBottom="110dp">
 
             <!-- Header: avatar, sapaan, notifikasi -->
             <LinearLayout
@@ -389,13 +389,12 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!-- Navigasi bawah bergaya Liquid Glass: melayang di atas konten (komponen buatan sendiri) -->
+    <com.example.najwan_2tif.palmsys.komponen.LiquidGlassNav
         android:id="@+id/navigasiBawah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@color/nav_item"
-        app:itemTextColor="@color/nav_item"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_navigasi_bawah" />
-</LinearLayout>
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="2dp" />
+</FrameLayout>

@@ -20,6 +20,7 @@ Alur aplikasi: **Onboarding → Login → Beranda → Catat Penjualan TBS / Semu
 | `profil/` | `ProfilActivity.kt` | Halaman profil (identitas, ringkasan kebun, pengaturan, keluar) |
 | `pengaturan/` | `PengaturanActivity.kt` | Halaman pengaturan: pilih warna tema, notifikasi, sinkron |
 | `pengaturan/` | `Tema.kt` | Daftar warna tema (Oranye, Merah, Ungu, Hijau, Biru) + simpan pilihan user |
+| `komponen/` | `LiquidGlassNav.kt` | Navigasi bawah bergaya Liquid Glass (custom View: digambar di `onDraw`, gerak pakai simulasi pegas) |
 | `util/` | `BaseActivity.kt` | Induk semua halaman: memasang warna tema pilihan user |
 | `util/` | `BarisMenu.kt` | Fungsi `atur()` untuk mengisi satu baris menu (`item_menu_profil.xml`) |
 | `util/` | `Format.kt` | Format angka & rupiah (`formatRupiah`, `formatAngka`) |
@@ -33,8 +34,8 @@ Fitur baru → buat folder baru di `palmsys/` (misal `pengeluaran/`, `kebun/`, `
 |---|---|---|
 | `layout/` | `activity_<halaman>.xml` untuk halaman, `item_<nama>.xml` untuk potongan berulang | `activity_beranda.xml`, `item_transaksi.xml` |
 | `drawable/` | `ic_` = ikon, `bg_` = latar/bentuk | `ic_calendar.xml`, `bg_saldo_card.xml` |
-| `menu/` | `menu_<tempat>.xml` | `menu_navigasi_bawah.xml` |
-| `color/` | warna yang berubah saat dipilih | `chip_bg.xml`, `nav_item.xml` |
+| `menu/` | `menu_<tempat>.xml` | `menu_catat_penjualan.xml` |
+| `color/` | warna yang berubah saat dipilih | `chip_bg.xml`, `chip_text.xml` |
 | `values/strings.xml` | dikelompokkan per halaman: `login_`, `beranda_`, `penjualan_` | `penjualan_simpan` |
 | `values/colors.xml` | `palm_` = warna utama, `tile_` = warna ikon menu | `palm_orange_dark` |
 | `values/themes.xml` | `Theme.PalmSys` = tema oranye Beranda & Penjualan | |
