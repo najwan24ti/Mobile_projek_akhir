@@ -16,6 +16,20 @@
     <color name="palm_yellow">#FFB7791F</color>
     <color name="palm_yellow_soft">#FFFFF4D6</color>
 
+    <!-- Pilihan warna tema (utama, gelap, lembut) -->
+    <color name="tema_merah">#FFD32F2F</color>
+    <color name="tema_merah_gelap">#FF9A1B1B</color>
+    <color name="tema_merah_lembut">#FFFDE3E3</color>
+    <color name="tema_ungu">#FF8E44C9</color>
+    <color name="tema_ungu_gelap">#FF5E2A92</color>
+    <color name="tema_ungu_lembut">#FFF1E6FA</color>
+    <color name="tema_hijau">#FF3E8E41</color>
+    <color name="tema_hijau_gelap">#FF2A6630</color>
+    <color name="tema_hijau_lembut">#FFE2F1DF</color>
+    <color name="tema_biru">#FF2F7DD1</color>
+    <color name="tema_biru_gelap">#FF1D5599</color>
+    <color name="tema_biru_lembut">#FFE0ECFA</color>
+
     <!-- Ikon menu beranda -->
     <color name="tile_green">#FF4A8B3A</color>
     <color name="tile_green_bg">#FFE2EFDC</color>

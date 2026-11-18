@@ -11,12 +11,12 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.example.najwan_2tif.R
+import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.databinding.ActivityCatatPenjualanBinding
 import com.example.najwan_2tif.palmsys.util.LOCALE_ID
 import com.example.najwan_2tif.palmsys.util.formatAngka
@@ -37,7 +37,7 @@ import java.util.Date
 import java.util.TimeZone
 import kotlin.math.roundToLong
 
-class CatatPenjualanActivity : AppCompatActivity() {
+class CatatPenjualanActivity : BaseActivity() {
     private lateinit var binding: ActivityCatatPenjualanBinding
 
     /** Tanggal panen dalam milidetik UTC (format bawaan MaterialDatePicker). */

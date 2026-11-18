@@ -7,31 +7,78 @@
 
     <style name="Theme.Najwan_2Tif" parent="Base.Theme.Najwan_2Tif" />
 
-    <!-- Tema oranye untuk semua halaman PalmSys -->
+    <!-- Tema bawaan PalmSys (oranye). Tema warna lain di bawah mewarisi tema ini. -->
     <style name="Theme.PalmSys" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/palm_orange_dark</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/palm_cream</item>
+        <item name="textInputStyle">@style/Widget.PalmSys.TextInput</item>
+        <item name="warnaUtama">@color/palm_orange</item>
+        <item name="warnaUtamaGelap">@color/palm_orange_dark</item>
+        <item name="warnaUtamaLembut">@color/palm_orange_soft</item>
+        <item name="colorPrimary">@color/palm_orange_dark</item>
         <item name="colorPrimaryContainer">@color/palm_orange_soft</item>
         <item name="colorSecondaryContainer">@color/palm_orange_soft</item>
         <item name="colorOnSecondaryContainer">@color/palm_orange_dark</item>
-        <item name="android:windowBackground">@color/palm_cream</item>
-        <item name="textInputStyle">@style/Widget.PalmSys.TextInput</item>
+    </style>
+
+    <!-- Tema merah -->
+    <style name="Theme.PalmSys.Merah" parent="Theme.PalmSys">
+        <item name="warnaUtama">@color/tema_merah</item>
+        <item name="warnaUtamaGelap">@color/tema_merah_gelap</item>
+        <item name="warnaUtamaLembut">@color/tema_merah_lembut</item>
+        <item name="colorPrimary">@color/tema_merah_gelap</item>
+        <item name="colorPrimaryContainer">@color/tema_merah_lembut</item>
+        <item name="colorSecondaryContainer">@color/tema_merah_lembut</item>
+        <item name="colorOnSecondaryContainer">@color/tema_merah_gelap</item>
+    </style>
+
+    <!-- Tema ungu -->
+    <style name="Theme.PalmSys.Ungu" parent="Theme.PalmSys">
+        <item name="warnaUtama">@color/tema_ungu</item>
+        <item name="warnaUtamaGelap">@color/tema_ungu_gelap</item>
+        <item name="warnaUtamaLembut">@color/tema_ungu_lembut</item>
+        <item name="colorPrimary">@color/tema_ungu_gelap</item>
+        <item name="colorPrimaryContainer">@color/tema_ungu_lembut</item>
+        <item name="colorSecondaryContainer">@color/tema_ungu_lembut</item>
+        <item name="colorOnSecondaryContainer">@color/tema_ungu_gelap</item>
+    </style>
+
+    <!-- Tema hijau -->
+    <style name="Theme.PalmSys.Hijau" parent="Theme.PalmSys">
+        <item name="warnaUtama">@color/tema_hijau</item>
+        <item name="warnaUtamaGelap">@color/tema_hijau_gelap</item>
+        <item name="warnaUtamaLembut">@color/tema_hijau_lembut</item>
+        <item name="colorPrimary">@color/tema_hijau_gelap</item>
+        <item name="colorPrimaryContainer">@color/tema_hijau_lembut</item>
+        <item name="colorSecondaryContainer">@color/tema_hijau_lembut</item>
+        <item name="colorOnSecondaryContainer">@color/tema_hijau_gelap</item>
+    </style>
+
+    <!-- Tema biru -->
+    <style name="Theme.PalmSys.Biru" parent="Theme.PalmSys">
+        <item name="warnaUtama">@color/tema_biru</item>
+        <item name="warnaUtamaGelap">@color/tema_biru_gelap</item>
+        <item name="warnaUtamaLembut">@color/tema_biru_lembut</item>
+        <item name="colorPrimary">@color/tema_biru_gelap</item>
+        <item name="colorPrimaryContainer">@color/tema_biru_lembut</item>
+        <item name="colorSecondaryContainer">@color/tema_biru_lembut</item>
+        <item name="colorOnSecondaryContainer">@color/tema_biru_gelap</item>
     </style>
 
     <style name="Widget.PalmSys.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxBackgroundColor">@color/white</item>
-        <item name="boxStrokeColor">@color/palm_orange_dark</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
         <item name="boxCornerRadiusTopStart">12dp</item>
         <item name="boxCornerRadiusTopEnd">12dp</item>
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
-        <item name="hintTextColor">@color/palm_orange_dark</item>
+        <item name="hintTextColor">?attr/colorPrimary</item>
     </style>
 
     <style name="Widget.PalmSys.Chip" parent="Widget.Material3.Chip.Filter">
         <item name="chipBackgroundColor">@color/chip_bg</item>
         <item name="chipStrokeColor">@color/chip_stroke</item>
-        <item name="checkedIconTint">@color/palm_orange_dark</item>
+        <item name="checkedIconTint">?attr/colorPrimary</item>
         <item name="android:textColor">@color/chip_text</item>
     </style>
 

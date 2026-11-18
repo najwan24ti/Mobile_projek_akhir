@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna tema yang bisa diganti user di halaman Pengaturan.
+         Di layout dipakai dengan ?attr/warnaUtama, bukan @color/... -->
+    <attr name="warnaUtama" format="color" />
+    <attr name="warnaUtamaGelap" format="color" />
+    <attr name="warnaUtamaLembut" format="color" />
+</resources>

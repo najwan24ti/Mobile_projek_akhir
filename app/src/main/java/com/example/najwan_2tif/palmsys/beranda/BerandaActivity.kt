@@ -11,10 +11,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.BundleCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.najwan_2tif.R
+import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.databinding.ActivityBerandaBinding
 import com.example.najwan_2tif.databinding.ItemMenuBerandaBinding
 import com.example.najwan_2tif.databinding.ItemTransaksiBinding
@@ -24,7 +25,7 @@ import com.example.najwan_2tif.palmsys.util.formatRupiah
 import com.example.najwan_2tif.palmsys.util.formatRupiahBertanda
 import java.util.Calendar
 
-class BerandaActivity : AppCompatActivity() {
+class BerandaActivity : BaseActivity() {
     private lateinit var binding: ActivityBerandaBinding
 
     private var saldo = 18_740_500L
@@ -56,6 +57,13 @@ class BerandaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Data dipulihkan kalau halaman digambar ulang (misalnya setelah ganti warna tema)
+        if (savedInstanceState != null) {
+            saldo = savedInstanceState.getLong(STATE_SALDO, saldo)
+            @Suppress("UNCHECKED_CAST")
+            (BundleCompat.getSerializable(savedInstanceState, STATE_TRANSAKSI, ArrayList::class.java) as? ArrayList<Transaksi>)
+                ?.let { daftarTransaksi.clear(); daftarTransaksi.addAll(it) }
+        }
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
@@ -97,6 +105,12 @@ class BerandaActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putLong(STATE_SALDO, saldo)
+        outState.putSerializable(STATE_TRANSAKSI, ArrayList(daftarTransaksi))
     }
 
     private val nama by lazy { intent.getStringExtra(EXTRA_USERNAME).orEmpty().ifBlank { "Petani" } }
@@ -189,6 +203,8 @@ class BerandaActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_USERNAME = "extra_username"
         const val EXTRA_AKUN = "extra_akun"
+        private const val STATE_SALDO = "state_saldo"
+        private const val STATE_TRANSAKSI = "state_transaksi"
         private const val MAKS_TRANSAKSI = 4
     }
 }

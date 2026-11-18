@@ -50,7 +50,7 @@
                     android:layout_height="20dp"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_cloud_off"
-                    app:tint="@color/palm_orange" />
+                    app:tint="?attr/warnaUtama" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -58,7 +58,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="@string/penjualan_offline"
-                    android:textColor="@color/palm_orange_dark"
+                    android:textColor="?attr/warnaUtamaGelap"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -248,14 +248,14 @@
                         android:layout_height="24dp"
                         android:importantForAccessibility="no"
                         android:src="@drawable/ic_camera"
-                        app:tint="@color/palm_orange" />
+                        app:tint="?attr/warnaUtama" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="@string/penjualan_foto_tambah"
-                        android:textColor="@color/palm_orange_dark"
+                        android:textColor="?attr/warnaUtamaGelap"
                         android:textSize="11sp" />
                 </LinearLayout>
 
@@ -350,7 +350,7 @@
                         android:id="@+id/txtTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/palm_orange_dark"
+                        android:textColor="?attr/warnaUtamaGelap"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         tools:text="Rp 8.407.750" />
@@ -365,7 +365,7 @@
         android:layout_height="56dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="12dp"
-        android:backgroundTint="@color/palm_orange_dark"
+        android:backgroundTint="?attr/warnaUtamaGelap"
         android:text="@string/penjualan_simpan"
         android:textColor="@color/white"
         android:textSize="16sp"

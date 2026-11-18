@@ -46,6 +46,12 @@
             android:name=".palmsys.profil.ProfilActivity"
             android:exported="false"
             android:theme="@style/Theme.PalmSys" />
+
+        <!-- 5. Pengaturan (warna tema, notifikasi) — dari halaman Profil -->
+        <activity
+            android:name=".palmsys.pengaturan.PengaturanActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PalmSys" />
     </application>
 
 </manifest>

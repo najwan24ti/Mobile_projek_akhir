@@ -73,14 +73,29 @@
     <string name="profil_edit">Edit profil</string>
     <string name="profil_kata_sandi">Ubah kata sandi</string>
     <string name="profil_data_kebun">Data kebun &amp; blok</string>
-    <string name="profil_notifikasi">Notifikasi pengingat</string>
-    <string name="profil_sinkron">Sinkron otomatis</string>
+    <string name="profil_warna_tema">Warna tema</string>
+    <string name="profil_pengaturan">Pengaturan aplikasi</string>
     <string name="profil_bantuan">Bantuan</string>
     <string name="profil_tentang">Tentang PalmSys</string>
     <string name="profil_versi">Versi %1$s</string>
     <string name="profil_keluar">Keluar</string>
     <string name="profil_keluar_judul">Keluar dari akun?</string>
     <string name="profil_keluar_pesan">Anda perlu masuk lagi untuk membuka PalmSys.</string>
+
+    <!-- Pengaturan -->
+    <string name="pengaturan_judul">Pengaturan</string>
+    <string name="pengaturan_tema_aktif">Warna tema aktif</string>
+    <string name="pengaturan_bagian_warna">Warna tema</string>
+    <string name="pengaturan_warna_info">Warna yang dipilih dipakai di semua halaman PalmSys.</string>
+    <string name="pengaturan_tema_diganti">Tema %1$s dipakai</string>
+    <string name="pengaturan_bagian_umum">Notifikasi &amp; data</string>
+    <string name="pengaturan_notifikasi">Notifikasi pengingat</string>
+    <string name="pengaturan_sinkron">Sinkron otomatis</string>
+    <string name="tema_oranye">Oranye</string>
+    <string name="tema_merah">Merah</string>
+    <string name="tema_ungu">Ungu</string>
+    <string name="tema_hijau">Hijau</string>
+    <string name="tema_biru">Biru</string>
 
     <!-- Catat Penjualan TBS -->
     <string name="penjualan_judul">Catat Penjualan TBS</string>

@@ -1,6 +1,6 @@
 # Struktur Proyek PalmSys
 
-Alur aplikasi: **Login → Beranda → Catat Penjualan TBS / Profil**
+Alur aplikasi: **Login → Beranda → Catat Penjualan TBS / Profil → Pengaturan**
 
 ## Kode Kotlin
 `app/src/main/java/com/example/najwan_2tif/palmsys/`
@@ -13,6 +13,10 @@ Alur aplikasi: **Login → Beranda → Catat Penjualan TBS / Profil**
 | `penjualan/` | `CatatPenjualanActivity.kt` | Form catat penjualan TBS + rumus hitungnya |
 | `penjualan/` | `PembacaNota.kt` | Fitur scan nota: baca berat bruto dari teks OCR ML Kit (tes: `app/src/test/.../PembacaNotaTest.kt`) |
 | `profil/` | `ProfilActivity.kt` | Halaman profil (identitas, ringkasan kebun, pengaturan, keluar) |
+| `pengaturan/` | `PengaturanActivity.kt` | Halaman pengaturan: pilih warna tema, notifikasi, sinkron |
+| `pengaturan/` | `Tema.kt` | Daftar warna tema (Oranye, Merah, Ungu, Hijau, Biru) + simpan pilihan user |
+| `util/` | `BaseActivity.kt` | Induk semua halaman: memasang warna tema pilihan user |
+| `util/` | `BarisMenu.kt` | Fungsi `atur()` untuk mengisi satu baris menu (`item_menu_profil.xml`) |
 | `util/` | `Format.kt` | Format angka & rupiah (`formatRupiah`, `formatAngka`) |
 
 Fitur baru → buat folder baru di `palmsys/` (misal `pengeluaran/`, `kebun/`, `laporan/`).
@@ -29,3 +33,10 @@ Fitur baru → buat folder baru di `palmsys/` (misal `pengeluaran/`, `kebun/`, `
 | `values/strings.xml` | dikelompokkan per halaman: `login_`, `beranda_`, `penjualan_` | `penjualan_simpan` |
 | `values/colors.xml` | `palm_` = warna utama, `tile_` = warna ikon menu | `palm_orange_dark` |
 | `values/themes.xml` | `Theme.PalmSys` = tema oranye Beranda & Penjualan | |
+
+## Warna tema (bisa diganti user)
+- Jangan tulis `@color/palm_orange...` langsung di layout. Pakai warna tema:
+  `?attr/warnaUtama`, `?attr/warnaUtamaGelap`, `?attr/warnaUtamaLembut` (didefinisikan di `values/attrs.xml`).
+- Tiap warna punya style di `values/themes.xml`: `Theme.PalmSys` (oranye), `Theme.PalmSys.Merah`, `.Ungu`, `.Hijau`, `.Biru`.
+- Halaman baru wajib `extends BaseActivity` (bukan `AppCompatActivity`) supaya ikut berganti warna.
+- Tambah warna baru: tambah 3 warna di `colors.xml` → 1 style di `themes.xml` → 1 baris di `Tema.kt`.

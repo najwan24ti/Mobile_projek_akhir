@@ -7,16 +7,16 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
 import com.example.najwan_2tif.R
+import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.databinding.ActivityLoginBinding
 import com.example.najwan_2tif.palmsys.beranda.BerandaActivity
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
