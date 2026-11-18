@@ -3,10 +3,26 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="palm_green_dark">#FF1B5E20</color>
-    <color name="palm_green">#FF2E7D32</color>
-    <color name="palm_green_light">#FF66BB6A</color>
-    <color name="palm_gold">#FFF9A825</color>
-    <color name="palm_text">#FF1F2A1F</color>
-    <color name="palm_text_muted">#FF6B7A6B</color>
+    <!-- Warna utama PalmSys -->
+    <color name="palm_text">#FF2B2118</color>
+    <color name="palm_text_muted">#FF7B6F66</color>
+    <color name="palm_orange">#FFD2611F</color>
+    <color name="palm_orange_dark">#FFA6470F</color>
+    <color name="palm_orange_soft">#FFFDEBDD</color>
+    <color name="palm_cream">#FFF5F4EC</color>
+    <color name="palm_surface">#FFEFEDE4</color>
+    <color name="palm_line">#FFE4DED3</color>
+    <color name="palm_red">#FFD2452F</color>
+    <color name="palm_yellow">#FFB7791F</color>
+    <color name="palm_yellow_soft">#FFFFF4D6</color>
+
+    <!-- Ikon menu beranda -->
+    <color name="tile_green">#FF4A8B3A</color>
+    <color name="tile_green_bg">#FFE2EFDC</color>
+    <color name="tile_peach">#FFD2552F</color>
+    <color name="tile_peach_bg">#FFFCE2D6</color>
+    <color name="tile_blue">#FF2F6BC8</color>
+    <color name="tile_blue_bg">#FFDFEAFB</color>
+    <color name="tile_purple">#FF7A4FC2</color>
+    <color name="tile_purple_bg">#FFEAE2F7</color>
 </resources>

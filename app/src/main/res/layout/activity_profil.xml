@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palm_cream"
+    android:orientation="vertical"
+    tools:context=".palmsys.profil.ProfilActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/palm_cream"
+        app:navigationContentDescription="@string/kembali"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/palm_text"
+        app:title="@string/profil_judul"
+        app:titleTextColor="@color/palm_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="24dp">
+
+            <!-- Kartu identitas: avatar, nama, akun, peran -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_saldo_card"
+                android:elevation="4dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtAvatar"
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:background="@drawable/bg_avatar_profil"
+                    android:gravity="center"
+                    android:textColor="@color/palm_orange_dark"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    tools:text="TA" />
+
+                <TextView
+                    android:id="@+id/txtNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Tarmizi" />
+
+                <TextView
+                    android:id="@+id/txtAkun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:alpha="0.9"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    tools:text="tarmizi@mail.com" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_chip_transparan"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/profil_peran"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:drawableStartCompat="@drawable/ic_check_circle"
+                    app:drawableTint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:alpha="0.9"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/profil_lokasi"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:drawableStartCompat="@drawable/ic_location"
+                    app:drawableTint="@color/white" />
+            </LinearLayout>
+
+            <!-- Ringkasan kebun -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_kartu"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingVertical="14dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_luas_nilai"
+                        android:textColor="@color/palm_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_luas"
+                        android:textColor="@color/palm_text_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/palm_line" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_blok_nilai"
+                        android:textColor="@color/palm_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_blok"
+                        android:textColor="@color/palm_text_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/palm_line" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_pekerja_nilai"
+                        android:textColor="@color/palm_text"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profil_pekerja"
+                        android:textColor="@color/palm_text_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Akun -->
+            <TextView
+                style="@style/PalmSysJudulBagian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profil_bagian_akun" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_kartu"
+                android:divider="@drawable/garis_pemisah"
+                android:orientation="vertical"
+                android:paddingVertical="4dp"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/menuEditProfil"
+                    layout="@layout/item_menu_profil" />
+
+                <include
+                    android:id="@+id/menuKataSandi"
+                    layout="@layout/item_menu_profil" />
+
+                <include
+                    android:id="@+id/menuDataKebun"
+                    layout="@layout/item_menu_profil" />
+            </LinearLayout>
+
+            <!-- Pengaturan -->
+            <TextView
+                style="@style/PalmSysJudulBagian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profil_bagian_pengaturan" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_kartu"
+                android:divider="@drawable/garis_pemisah"
+                android:orientation="vertical"
+                android:paddingVertical="4dp"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/menuNotifikasi"
+                    layout="@layout/item_menu_profil" />
+
+                <include
+                    android:id="@+id/menuSinkron"
+                    layout="@layout/item_menu_profil" />
+            </LinearLayout>
+
+            <!-- Lainnya -->
+            <TextView
+                style="@style/PalmSysJudulBagian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profil_bagian_lainnya" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_kartu"
+                android:divider="@drawable/garis_pemisah"
+                android:orientation="vertical"
+                android:paddingVertical="4dp"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/menuBantuan"
+                    layout="@layout/item_menu_profil" />
+
+                <include
+                    android:id="@+id/menuTentang"
+                    layout="@layout/item_menu_profil" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnKeluar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/profil_keluar"
+                android:textColor="@color/palm_red"
+                android:textSize="15sp"
+                app:cornerRadius="28dp"
+                app:icon="@drawable/ic_logout"
+                app:iconGravity="textStart"
+                app:iconTint="@color/palm_red"
+                app:strokeColor="@color/palm_red" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

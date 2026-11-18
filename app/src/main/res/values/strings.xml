@@ -1,23 +1,118 @@
 <resources>
-    <string name="app_name">najwan_2Tif</string>
+    <string name="app_name">PalmSys</string>
 
+    <!-- Umum -->
     <string name="palmsys_name">PalmSys</string>
     <string name="palmsys_tagline">Sistem Informasi Perkebunan Sawit</string>
-    <string name="login_title">Selamat Datang</string>
-    <string name="login_subtitle">Masuk untuk melanjutkan ke akun Anda</string>
-    <string name="login_username">Username</string>
-    <string name="login_password">Password</string>
+    <string name="segera_hadir">Fitur %1$s segera hadir</string>
+
+    <!-- Login (auth) -->
+    <string name="login_title">Selamat datang\nkembali</string>
+    <string name="login_subtitle">Masuk untuk mengelola keuangan kebunmu</string>
+    <string name="login_akun">Nomor HP / Email</string>
+    <string name="login_password">Kata sandi</string>
     <string name="login_remember">Ingat saya</string>
-    <string name="login_forgot">Lupa password?</string>
+    <string name="login_forgot">Lupa kata sandi?</string>
     <string name="login_button">Masuk</string>
-    <string name="login_footer">PalmSys v1.0 · © 2026</string>
-    <string name="login_error_username">Username wajib diisi</string>
-    <string name="login_error_password">Password wajib diisi</string>
+    <string name="login_atau">atau</string>
+    <string name="login_sidik_jari">Masuk dengan sidik jari</string>
+    <string name="login_belum_punya_akun">Belum punya akun?</string>
+    <string name="login_daftar">Daftar</string>
+    <string name="login_footer">Akun yang sama dengan PalmSys Web</string>
+    <string name="login_error_akun">Nomor HP atau email wajib diisi</string>
+    <string name="login_error_password">Kata sandi wajib diisi</string>
     <string name="login_success">Selamat datang, %1$s</string>
-    <string name="login_forgot_info">Hubungi admin untuk reset password</string>
+    <string name="login_forgot_info">Hubungi admin untuk reset kata sandi</string>
 
-    <string name="deskripsi">
+    <!-- Beranda -->
+    <string name="beranda_pagi">Selamat pagi,</string>
+    <string name="beranda_siang">Selamat siang,</string>
+    <string name="beranda_sore">Selamat sore,</string>
+    <string name="beranda_malam">Selamat malam,</string>
+    <string name="beranda_notifikasi">Notifikasi</string>
+    <string name="beranda_saldo">Saldo kas kebun</string>
+    <string name="beranda_tersinkron">Tersinkron 2 mnt lalu</string>
+    <string name="beranda_pemasukan">Pemasukan Sep</string>
+    <string name="beranda_pemasukan_nilai">Rp 24,68 jt</string>
+    <string name="beranda_pengeluaran">Pengeluaran Sep</string>
+    <string name="beranda_pengeluaran_nilai">Rp 7,42 jt</string>
+    <string name="beranda_menu_catat_panen">Catat Panen</string>
+    <string name="beranda_menu_pengeluaran">Pengeluaran</string>
+    <string name="beranda_menu_blok_kebun">Blok Kebun</string>
+    <string name="beranda_menu_kalkulator">Kalkulator TBS</string>
+    <string name="beranda_harga_judul">Harga TBS hari ini · %1$s</string>
+    <string name="beranda_harga_satuan">/kg</string>
+    <string name="beranda_harga_naik">Rp 50</string>
+    <string name="beranda_pengingat_judul">Pemupukan NPK Blok B</string>
+    <string name="beranda_pengingat_detail">Jumat, 3 Okt · 6 karung (300 kg)</string>
+    <string name="beranda_transaksi_terakhir">Transaksi terakhir</string>
+    <string name="beranda_lihat_semua">Lihat semua</string>
+    <string name="batal">Batal</string>
+    <string name="kembali">Kembali</string>
 
-        4年後に日本へ行きたいです
-    </string>
+    <!-- Navigasi bawah -->
+    <string name="nav_beranda">Beranda</string>
+    <string name="nav_transaksi">Transaksi</string>
+    <string name="nav_kebun">Kebun</string>
+    <string name="nav_laporan">Laporan</string>
+    <string name="nav_profil">Profil</string>
+
+    <!-- Profil -->
+    <string name="profil_judul">Profil</string>
+    <string name="profil_peran">Pemilik kebun · Terverifikasi</string>
+    <string name="profil_lokasi">Desa Api-Api, Bengkalis, Riau</string>
+    <string name="profil_luas">Luas kebun</string>
+    <string name="profil_luas_nilai">12,5 ha</string>
+    <string name="profil_blok">Blok</string>
+    <string name="profil_blok_nilai">3</string>
+    <string name="profil_pekerja">Pekerja</string>
+    <string name="profil_pekerja_nilai">2 orang</string>
+    <string name="profil_bagian_akun">Akun</string>
+    <string name="profil_bagian_pengaturan">Pengaturan</string>
+    <string name="profil_bagian_lainnya">Lainnya</string>
+    <string name="profil_edit">Edit profil</string>
+    <string name="profil_kata_sandi">Ubah kata sandi</string>
+    <string name="profil_data_kebun">Data kebun &amp; blok</string>
+    <string name="profil_notifikasi">Notifikasi pengingat</string>
+    <string name="profil_sinkron">Sinkron otomatis</string>
+    <string name="profil_bantuan">Bantuan</string>
+    <string name="profil_tentang">Tentang PalmSys</string>
+    <string name="profil_versi">Versi %1$s</string>
+    <string name="profil_keluar">Keluar</string>
+    <string name="profil_keluar_judul">Keluar dari akun?</string>
+    <string name="profil_keluar_pesan">Anda perlu masuk lagi untuk membuka PalmSys.</string>
+
+    <!-- Catat Penjualan TBS -->
+    <string name="penjualan_judul">Catat Penjualan TBS</string>
+    <string name="penjualan_kosongkan">Kosongkan form</string>
+    <string name="penjualan_offline">Tidak ada sinyal — data disimpan di HP &amp; disinkron otomatis nanti.</string>
+    <string name="penjualan_tanggal">Tanggal panen</string>
+    <string name="penjualan_blok">Blok yang dipanen</string>
+    <string name="penjualan_blok_a">Blok A</string>
+    <string name="penjualan_blok_b">Blok B</string>
+    <string name="penjualan_blok_c">Blok C</string>
+    <string name="penjualan_bruto">Berat bruto</string>
+    <string name="penjualan_sortasi">Sortasi</string>
+    <string name="penjualan_harga">Harga / kg</string>
+    <string name="penjualan_pembeli">Pembeli</string>
+    <string name="penjualan_foto">Foto nota timbangan</string>
+    <string name="penjualan_foto_tambah">Scan</string>
+    <string name="penjualan_foto_info">Scan nota untuk mengisi berat bruto otomatis</string>
+    <string name="penjualan_scan_membaca">Membaca nota…</string>
+    <string name="penjualan_scan_terisi">Terisi otomatis dari nota — periksa lagi</string>
+    <string name="penjualan_scan_tidak_terbaca">Berat bruto tidak terbaca di nota, isi manual ya</string>
+    <string name="penjualan_foto_gagal">Kamera tidak tersedia di perangkat ini</string>
+    <string name="penjualan_berat_bersih">Berat bersih (−%1$s%%)</string>
+    <string name="penjualan_rumus">%1$s kg × %2$s</string>
+    <string name="penjualan_total">Total diterima</string>
+    <string name="penjualan_simpan">Simpan Transaksi</string>
+    <string name="penjualan_tersimpan">Transaksi penjualan disimpan</string>
+    <string name="penjualan_judul_transaksi">Penjualan TBS · %1$s</string>
+    <string name="penjualan_error_bruto">Isi berat bruto</string>
+    <string name="penjualan_error_harga">Isi harga per kg</string>
+    <string name="penjualan_error_pembeli">Isi nama pembeli</string>
+    <string name="penjualan_error_blok">Pilih minimal satu blok</string>
+    <string name="satuan_kg">kg</string>
+    <string name="satuan_persen">%</string>
+    <string name="awalan_rp">Rp </string>
 </resources>
