@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Background halaman Beranda (Home):
      dasar krem + gradasi warna tema di bagian atas + dua lingkaran hiasan di pojok kanan atas.
-     Warnanya ikut tema pilihan user (?attr/warnaUtamaLembut). -->
+     Warnanya ikut tema pilihan user (?attr/warnaUtamaLembut).
+     Ditambah cahaya warna samar supaya card kaca di atasnya terlihat seperti kaca buram. -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Dasar -->
@@ -47,6 +48,50 @@
         android:top="-30dp">
         <shape android:shape="oval">
             <solid android:color="?attr/warnaUtamaLembut" />
+        </shape>
+    </item>
+
+    <!-- Cahaya warna samar (terlihat buram lewat card kaca) -->
+    <item
+        android:width="300dp"
+        android:height="300dp"
+        android:gravity="center_vertical|start"
+        android:left="-120dp"
+        android:top="-40dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#00FFFFFF"
+                android:gradientRadius="150dp"
+                android:startColor="?attr/warnaCahayaLatar"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item
+        android:width="320dp"
+        android:height="320dp"
+        android:gravity="center_vertical|end"
+        android:right="-130dp"
+        android:top="260dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#00FFFFFF"
+                android:gradientRadius="160dp"
+                android:startColor="@color/cahaya_emas"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item
+        android:width="340dp"
+        android:height="340dp"
+        android:bottom="-80dp"
+        android:gravity="bottom|start"
+        android:left="-90dp">
+        <shape android:shape="oval">
+            <gradient
+                android:endColor="#00FFFFFF"
+                android:gradientRadius="170dp"
+                android:startColor="?attr/warnaCahayaLatar"
+                android:type="radial" />
         </shape>
     </item>
 </layer-list>

@@ -20,6 +20,7 @@ Alur aplikasi: **Onboarding → Login → Beranda → Catat Penjualan TBS / Semu
 | `profil/` | `ProfilActivity.kt` | Halaman profil (identitas, ringkasan kebun, pengaturan, keluar) |
 | `pengaturan/` | `PengaturanActivity.kt` | Halaman pengaturan: pilih warna tema, notifikasi, sinkron |
 | `pengaturan/` | `Tema.kt` | Daftar warna tema (Oranye, Merah, Ungu, Hijau, Biru) + simpan pilihan user |
+| `komponen/` | `KacaDrawable.kt` | Background card kaca (liquid glass) yang dipakai dari XML (`bg_kartu.xml`, `bg_saldo_card.xml`, dll.) |
 | `komponen/` | `LiquidGlassNav.kt` | Navigasi bawah bergaya Liquid Glass (custom View: digambar di `onDraw`, gerak pakai simulasi pegas) |
 | `util/` | `BaseActivity.kt` | Induk semua halaman: memasang warna tema pilihan user |
 | `util/` | `BarisMenu.kt` | Fungsi `atur()` untuk mengisi satu baris menu (`item_menu_profil.xml`) |
@@ -46,3 +47,9 @@ Fitur baru → buat folder baru di `palmsys/` (misal `pengeluaran/`, `kebun/`, `
 - Tiap warna punya style di `values/themes.xml`: `Theme.PalmSys` (oranye), `Theme.PalmSys.Merah`, `.Ungu`, `.Hijau`, `.Biru`.
 - Halaman baru wajib `extends BaseActivity` (bukan `AppCompatActivity`) supaya ikut berganti warna.
 - Tambah warna baru: tambah 3 warna di `colors.xml` → 1 style di `themes.xml` → 1 baris di `Tema.kt`.
+
+## Card kaca (liquid glass)
+- Semua card memakai background kaca dari `KacaDrawable`. Cukup pakai `@drawable/bg_kartu` (putih), `bg_saldo_card` (warna tema),
+  `bg_kartu_pengingat` (kuning), `bg_ringkasan`, `bg_banner_offline`, atau `bg_saldo_item` (kotak kaca kecil di dalam card berwarna).
+- Atur tampilannya di file XML-nya: `app:kacaPekat` (0 = bening, 1 = tidak tembus), `app:kacaRadius`, `app:kacaWarnaAwal/Akhir`.
+- Supaya efek kaca terlihat, halaman memakai background bercahaya: `bg_beranda` (Beranda & Onboarding) dan `bg_halaman` (halaman lain).

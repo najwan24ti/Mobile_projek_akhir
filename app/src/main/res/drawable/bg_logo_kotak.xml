@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="#33FFFFFF" />
-    <corners android:radius="10dp" />
-</shape>
+<!-- Kotak logo kaca di header login -->
+<drawable xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    class="com.example.najwan_2tif.palmsys.komponen.KacaDrawable"
+    app:kacaPakaiLatar="false"
+    app:kacaPekat="1"
+    app:kacaRadius="10dp"
+    app:kacaWarnaAkhir="#1FFFFFFF"
+    app:kacaWarnaAwal="#4DFFFFFF" />

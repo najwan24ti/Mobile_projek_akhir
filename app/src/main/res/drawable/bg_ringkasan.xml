@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid android:color="@color/palm_surface" />
-    <corners android:radius="14dp" />
-</shape>
+<!-- Card kaca ringkasan total di Catat Penjualan -->
+<drawable xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    class="com.example.najwan_2tif.palmsys.komponen.KacaDrawable"
+    app:kacaPakaiLatar="true"
+    app:kacaPekat="0.82"
+    app:kacaRadius="14dp"
+    app:kacaWarnaAkhir="@color/palm_surface"
+    app:kacaWarnaAwal="#FFFBF9F3" />

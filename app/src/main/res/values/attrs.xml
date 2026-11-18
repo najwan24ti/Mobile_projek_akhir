@@ -5,4 +5,19 @@
     <attr name="warnaUtama" format="color" />
     <attr name="warnaUtamaGelap" format="color" />
     <attr name="warnaUtamaLembut" format="color" />
+    <!-- Cahaya warna samar di background halaman (terlihat buram lewat card kaca) -->
+    <attr name="warnaCahayaLatar" format="color" />
+
+    <!-- Atribut untuk background kaca (KacaDrawable), dipakai di res/drawable/bg_*.xml -->
+    <declare-styleable name="KacaDrawable">
+        <!-- Sudut membulat -->
+        <attr name="kacaRadius" format="dimension" />
+        <!-- Warna lapisan kaca: kiri-atas → kanan-bawah -->
+        <attr name="kacaWarnaAwal" format="color" />
+        <attr name="kacaWarnaAkhir" format="color" />
+        <!-- Tingkat pekat lapisan kaca (0 = bening, 1 = tidak tembus) -->
+        <attr name="kacaPekat" format="float" />
+        <!-- true = background halaman di belakang ikut terlihat buram -->
+        <attr name="kacaPakaiLatar" format="boolean" />
+    </declare-styleable>
 </resources>
