@@ -8,19 +8,17 @@ import android.widget.Toast
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.ColorRes
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.core.os.BundleCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.najwan_2tif.R
-import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.databinding.ActivityBerandaBinding
-import com.example.najwan_2tif.databinding.ItemMenuBerandaBinding
 import com.example.najwan_2tif.databinding.ItemTransaksiBinding
 import com.example.najwan_2tif.palmsys.penjualan.CatatPenjualanActivity
 import com.example.najwan_2tif.palmsys.profil.ProfilActivity
+import com.example.najwan_2tif.palmsys.transaksi.TransaksiActivity
+import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.palmsys.util.formatRupiah
 import com.example.najwan_2tif.palmsys.util.formatRupiahBertanda
 import java.util.Calendar
@@ -32,7 +30,11 @@ class BerandaActivity : BaseActivity() {
     private val daftarTransaksi = mutableListOf(
         Transaksi("Penjualan TBS · Blok A", "29 Sep · 3.780 kg", 11_588_000, R.drawable.ic_eco),
         Transaksi("Upah dodos & langsir", "28 Sep · 2 orang", -945_000, R.drawable.ic_groups),
-        Transaksi("Beli pupuk NPK", "25 Sep · 6 karung", -1_850_000, R.drawable.ic_receipt)
+        Transaksi("Beli pupuk NPK", "25 Sep · 6 karung", -1_850_000, R.drawable.ic_receipt),
+        Transaksi("Penjualan TBS · Blok C", "22 Sep · 2.940 kg", 9_114_000, R.drawable.ic_eco),
+        Transaksi("Solar mesin & angkut", "20 Sep · 40 liter", -540_000, R.drawable.ic_receipt),
+        Transaksi("Upah semprot gulma", "18 Sep · 3 orang", -1_200_000, R.drawable.ic_groups),
+        Transaksi("Penjualan TBS · Blok B", "15 Sep · 3.120 kg", 9_984_000, R.drawable.ic_eco)
     )
 
     private val catatPenjualan =
@@ -89,12 +91,16 @@ class BerandaActivity : BaseActivity() {
         binding.btnNotifikasi.setOnClickListener { segeraHadir(getString(R.string.beranda_notifikasi)) }
         binding.kartuPengingat.setOnClickListener { segeraHadir(getString(R.string.beranda_pengingat_judul)) }
         binding.txtAvatar.setOnClickListener { bukaProfil() }
-        binding.txtLihatSemua.setOnClickListener { segeraHadir(getString(R.string.nav_transaksi)) }
+        binding.txtLihatSemua.setOnClickListener { bukaSemuaTransaksi() }
 
         binding.navigasiBawah.selectedItemId = R.id.nav_beranda
         binding.navigasiBawah.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_beranda -> true
+                R.id.nav_transaksi -> {
+                    bukaSemuaTransaksi()
+                    false
+                }
                 R.id.nav_profil -> {
                     bukaProfil()
                     false
@@ -137,38 +143,37 @@ class BerandaActivity : BaseActivity() {
         binding.txtSaldo.text = formatRupiah(saldo)
     }
 
+    /** Grid menu 4 kolom: RecyclerView + GridLayoutManager + MenuBerandaAdapter. */
     private fun tampilkanMenu() {
-        aturMenu(binding.menuCatatPanen, R.drawable.ic_eco, R.string.beranda_menu_catat_panen,
-            R.color.tile_green, R.color.tile_green_bg) {
-            catatPenjualan.launch(Intent(this, CatatPenjualanActivity::class.java))
-        }
-        aturMenu(binding.menuPengeluaran, R.drawable.ic_receipt, R.string.beranda_menu_pengeluaran,
-            R.color.tile_peach, R.color.tile_peach_bg) {
-            segeraHadir(getString(R.string.beranda_menu_pengeluaran))
-        }
-        aturMenu(binding.menuBlokKebun, R.drawable.ic_park, R.string.beranda_menu_blok_kebun,
-            R.color.tile_blue, R.color.tile_blue_bg) {
-            segeraHadir(getString(R.string.beranda_menu_blok_kebun))
-        }
-        aturMenu(binding.menuKalkulator, R.drawable.ic_calculator, R.string.beranda_menu_kalkulator,
-            R.color.tile_purple, R.color.tile_purple_bg) {
-            segeraHadir(getString(R.string.beranda_menu_kalkulator))
-        }
+        val daftarMenu = listOf(
+            MenuBeranda(R.drawable.ic_eco, R.string.beranda_menu_catat_panen,
+                R.color.tile_green, R.color.tile_green_bg) {
+                catatPenjualan.launch(Intent(this, CatatPenjualanActivity::class.java))
+            },
+            MenuBeranda(R.drawable.ic_receipt, R.string.beranda_menu_pengeluaran,
+                R.color.tile_peach, R.color.tile_peach_bg) { segeraHadir(getString(R.string.beranda_menu_pengeluaran)) },
+            MenuBeranda(R.drawable.ic_park, R.string.beranda_menu_blok_kebun,
+                R.color.tile_blue, R.color.tile_blue_bg) { segeraHadir(getString(R.string.beranda_menu_blok_kebun)) },
+            MenuBeranda(R.drawable.ic_calculator, R.string.beranda_menu_kalkulator,
+                R.color.tile_purple, R.color.tile_purple_bg) { segeraHadir(getString(R.string.beranda_menu_kalkulator)) },
+            MenuBeranda(R.drawable.ic_calendar, R.string.beranda_menu_jadwal_pupuk,
+                R.color.palm_yellow, R.color.palm_yellow_soft) { segeraHadir(getString(R.string.beranda_menu_jadwal_pupuk)) },
+            MenuBeranda(R.drawable.ic_groups, R.string.beranda_menu_pekerja,
+                R.color.tile_blue, R.color.tile_blue_bg) { segeraHadir(getString(R.string.beranda_menu_pekerja)) },
+            MenuBeranda(R.drawable.ic_bar_chart, R.string.beranda_menu_laporan,
+                R.color.tile_purple, R.color.tile_purple_bg) { segeraHadir(getString(R.string.beranda_menu_laporan)) },
+            MenuBeranda(R.drawable.ic_swap, R.string.beranda_menu_riwayat,
+                R.color.tile_green, R.color.tile_green_bg) { bukaSemuaTransaksi() }
+        )
+        binding.daftarMenu.layoutManager = GridLayoutManager(this, 4)
+        binding.daftarMenu.adapter = MenuBerandaAdapter(daftarMenu)
     }
 
-    private fun aturMenu(
-        menu: ItemMenuBerandaBinding,
-        @DrawableRes ikon: Int,
-        @StringRes label: Int,
-        @ColorRes warna: Int,
-        @ColorRes warnaLatar: Int,
-        onClick: () -> Unit
-    ) {
-        menu.imgIkon.setImageResource(ikon)
-        menu.imgIkon.imageTintList = ColorStateList.valueOf(getColor(warna))
-        menu.imgIkon.backgroundTintList = ColorStateList.valueOf(getColor(warnaLatar))
-        menu.txtLabel.setText(label)
-        menu.root.setOnClickListener { onClick() }
+    private fun bukaSemuaTransaksi() {
+        startActivity(
+            Intent(this, TransaksiActivity::class.java)
+                .putExtra(TransaksiActivity.EXTRA_TRANSAKSI, ArrayList(daftarTransaksi))
+        )
     }
 
     private fun tampilkanTransaksi() {

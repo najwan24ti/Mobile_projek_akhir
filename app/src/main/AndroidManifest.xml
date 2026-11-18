@@ -15,18 +15,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Najwan_2Tif">
 
-        <!-- 1. Login -->
+        <!-- 0. Onboarding (dibuka pertama kali; kalau sudah pernah dilihat langsung ke Login) -->
         <activity
-            android:name=".palmsys.auth.LoginActivity"
+            android:name=".palmsys.onboarding.OnboardingActivity"
             android:exported="true"
-            android:theme="@style/Theme.PalmSys"
-            android:windowSoftInputMode="adjustResize">
+            android:theme="@style/Theme.PalmSys">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 1. Login -->
+        <activity
+            android:name=".palmsys.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PalmSys"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- 2. Beranda -->
         <activity
@@ -40,6 +46,12 @@
             android:exported="false"
             android:theme="@style/Theme.PalmSys"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- 3b. Semua Transaksi (ListView + CustomAdapter) -->
+        <activity
+            android:name=".palmsys.transaksi.TransaksiActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PalmSys" />
 
         <!-- 4. Profil (dari tab Profil di navigasi bawah) -->
         <activity

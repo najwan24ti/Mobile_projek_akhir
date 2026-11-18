@@ -1,6 +1,7 @@
 package com.example.najwan_2tif.palmsys.pengaturan
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
@@ -19,6 +20,7 @@ import com.example.najwan_2tif.R
 import com.example.najwan_2tif.databinding.ActivityPengaturanBinding
 import com.example.najwan_2tif.databinding.ItemMenuProfilBinding
 import com.example.najwan_2tif.databinding.ItemPilihanWarnaBinding
+import com.example.najwan_2tif.palmsys.onboarding.OnboardingActivity
 import com.example.najwan_2tif.palmsys.util.BaseActivity
 import com.example.najwan_2tif.palmsys.util.atur
 
@@ -49,6 +51,14 @@ class PengaturanActivity : BaseActivity() {
             R.color.palm_yellow, R.color.palm_yellow_soft, KEY_NOTIFIKASI)
         aturSaklar(binding.menuSinkron, R.drawable.ic_sync, R.string.pengaturan_sinkron,
             R.color.tile_blue, R.color.tile_blue_bg, KEY_SINKRON)
+
+        binding.menuOnboarding.atur(R.drawable.ic_info, R.string.pengaturan_onboarding,
+            R.color.tile_green, R.color.tile_green_bg) {
+            startActivity(
+                Intent(this, OnboardingActivity::class.java)
+                    .putExtra(OnboardingActivity.EXTRA_LIHAT_LAGI, true)
+            )
+        }
     }
 
     private fun tampilkanPilihanWarna() {

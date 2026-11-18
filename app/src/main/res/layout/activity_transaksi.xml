@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palm_cream"
+    android:orientation="vertical"
+    tools:context=".palmsys.transaksi.TransaksiActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/palm_cream"
+        app:navigationContentDescription="@string/kembali"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="@color/palm_text"
+        app:title="@string/transaksi_judul"
+        app:titleTextColor="@color/palm_text" />
+
+    <!-- Ringkasan pemasukan & pengeluaran -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/bg_saldo_card"
+        android:baselineAligned="false"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_saldo_item"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="@string/transaksi_pemasukan"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:drawableStartCompat="@drawable/ic_trending_up"
+                app:drawableTint="@color/white" />
+
+            <TextView
+                android:id="@+id/txtPemasukan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Rp 30.686.000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_saldo_item"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:text="@string/transaksi_pengeluaran"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                app:drawableStartCompat="@drawable/ic_trending_down"
+                app:drawableTint="@color/white" />
+
+            <TextView
+                android:id="@+id/txtPengeluaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Rp 4.535.000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtJumlah"
+        style="@style/PalmSysJudulBagian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        tools:text="7 transaksi" />
+
+    <!-- Daftar transaksi: ListView yang diisi TransaksiAdapter (CustomAdapter) -->
+    <ListView
+        android:id="@+id/daftarTransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:divider="@color/palm_line"
+        android:dividerHeight="1dp"
+        android:paddingHorizontal="20dp"
+        tools:listitem="@layout/item_transaksi" />
+
+    <TextView
+        android:id="@+id/txtKosong"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/transaksi_kosong"
+        android:textColor="@color/palm_text_muted"
+        android:visibility="gone" />
+</LinearLayout>

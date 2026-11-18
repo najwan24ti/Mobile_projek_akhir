@@ -132,6 +132,25 @@
                     android:id="@+id/menuSinkron"
                     layout="@layout/item_menu_profil" />
             </LinearLayout>
+
+            <!-- Lainnya -->
+            <TextView
+                style="@style/PalmSysJudulBagian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pengaturan_bagian_lainnya" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_kartu"
+                android:orientation="vertical"
+                android:paddingVertical="4dp">
+
+                <include
+                    android:id="@+id/menuOnboarding"
+                    layout="@layout/item_menu_profil" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

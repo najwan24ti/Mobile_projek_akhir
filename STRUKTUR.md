@@ -1,17 +1,22 @@
 # Struktur Proyek PalmSys
 
-Alur aplikasi: **Login → Beranda → Catat Penjualan TBS / Profil → Pengaturan**
+Alur aplikasi: **Onboarding → Login → Beranda → Catat Penjualan TBS / Semua Transaksi / Profil → Pengaturan**
 
 ## Kode Kotlin
 `app/src/main/java/com/example/najwan_2tif/palmsys/`
 
 | Folder | File | Isi |
 |---|---|---|
+| `onboarding/` | `OnboardingActivity.kt` | Layar pengenalan 3 halaman (ViewPager2), muncul sekali saat pertama buka |
+| `onboarding/` | `OnboardingAdapter.kt`, `HalamanOnboarding.kt` | Adapter + data tiap halaman onboarding |
 | `auth/` | `LoginActivity.kt` | Halaman login |
 | `beranda/` | `BerandaActivity.kt` | Halaman beranda (saldo, menu, transaksi terakhir) |
+| `beranda/` | `MenuBerandaAdapter.kt`, `MenuBeranda.kt` | **RecyclerView** grid menu 4 kolom di Beranda |
 | `beranda/` | `Transaksi.kt` | Model data satu transaksi |
 | `penjualan/` | `CatatPenjualanActivity.kt` | Form catat penjualan TBS + rumus hitungnya |
 | `penjualan/` | `PembacaNota.kt` | Fitur scan nota: baca berat bruto dari teks OCR ML Kit (tes: `app/src/test/.../PembacaNotaTest.kt`) |
+| `transaksi/` | `TransaksiActivity.kt` | Halaman Semua Transaksi (ListView) |
+| `transaksi/` | `TransaksiAdapter.kt` | **CustomAdapter** (turunan `BaseAdapter`) untuk ListView transaksi |
 | `profil/` | `ProfilActivity.kt` | Halaman profil (identitas, ringkasan kebun, pengaturan, keluar) |
 | `pengaturan/` | `PengaturanActivity.kt` | Halaman pengaturan: pilih warna tema, notifikasi, sinkron |
 | `pengaturan/` | `Tema.kt` | Daftar warna tema (Oranye, Merah, Ungu, Hijau, Biru) + simpan pilihan user |

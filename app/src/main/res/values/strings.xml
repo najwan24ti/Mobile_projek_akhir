@@ -6,6 +6,17 @@
     <string name="palmsys_tagline">Sistem Informasi Perkebunan Sawit</string>
     <string name="segera_hadir">Fitur %1$s segera hadir</string>
 
+    <!-- Onboarding -->
+    <string name="onboarding_lewati">Lewati</string>
+    <string name="onboarding_lanjut">Lanjut</string>
+    <string name="onboarding_mulai">Mulai Sekarang</string>
+    <string name="onboarding_1_judul">Catat panen &amp; penjualan TBS</string>
+    <string name="onboarding_1_deskripsi">Isi berat bruto, potongan sortasi, dan harga per kg. Total uang yang diterima langsung dihitung otomatis.</string>
+    <string name="onboarding_2_judul">Scan nota timbangan</string>
+    <string name="onboarding_2_deskripsi">Foto nota dari RAM atau PKS, berat bruto terisi sendiri. Tidak perlu ketik ulang angka.</string>
+    <string name="onboarding_3_judul">Pantau kas kebun sawit</string>
+    <string name="onboarding_3_deskripsi">Lihat saldo, pemasukan, dan pengeluaran kebunmu kapan saja, bahkan saat tidak ada sinyal.</string>
+
     <!-- Login (auth) -->
     <string name="login_title">Selamat datang\nkembali</string>
     <string name="login_subtitle">Masuk untuk mengelola keuangan kebunmu</string>
@@ -40,6 +51,10 @@
     <string name="beranda_menu_pengeluaran">Pengeluaran</string>
     <string name="beranda_menu_blok_kebun">Blok Kebun</string>
     <string name="beranda_menu_kalkulator">Kalkulator TBS</string>
+    <string name="beranda_menu_jadwal_pupuk">Jadwal Pupuk</string>
+    <string name="beranda_menu_pekerja">Pekerja</string>
+    <string name="beranda_menu_laporan">Laporan</string>
+    <string name="beranda_menu_riwayat">Riwayat</string>
     <string name="beranda_harga_judul">Harga TBS hari ini · %1$s</string>
     <string name="beranda_harga_satuan">/kg</string>
     <string name="beranda_harga_naik">Rp 50</string>
@@ -56,6 +71,13 @@
     <string name="nav_kebun">Kebun</string>
     <string name="nav_laporan">Laporan</string>
     <string name="nav_profil">Profil</string>
+
+    <!-- Semua Transaksi -->
+    <string name="transaksi_judul">Semua Transaksi</string>
+    <string name="transaksi_pemasukan">Total pemasukan</string>
+    <string name="transaksi_pengeluaran">Total pengeluaran</string>
+    <string name="transaksi_jumlah">%1$d transaksi</string>
+    <string name="transaksi_kosong">Belum ada transaksi</string>
 
     <!-- Profil -->
     <string name="profil_judul">Profil</string>
@@ -91,6 +113,8 @@
     <string name="pengaturan_bagian_umum">Notifikasi &amp; data</string>
     <string name="pengaturan_notifikasi">Notifikasi pengingat</string>
     <string name="pengaturan_sinkron">Sinkron otomatis</string>
+    <string name="pengaturan_bagian_lainnya">Lainnya</string>
+    <string name="pengaturan_onboarding">Lihat layar pengenalan</string>
     <string name="tema_oranye">Oranye</string>
     <string name="tema_merah">Merah</string>
     <string name="tema_ungu">Ungu</string>

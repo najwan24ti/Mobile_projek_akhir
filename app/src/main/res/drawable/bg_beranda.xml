@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Background halaman Beranda (Home):
+     dasar krem + gradasi warna tema di bagian atas + dua lingkaran hiasan di pojok kanan atas.
+     Warnanya ikut tema pilihan user (?attr/warnaUtamaLembut). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Dasar -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/palm_cream" />
+        </shape>
+    </item>
+
+    <!-- Gradasi atas -->
+    <item
+        android:height="340dp"
+        android:gravity="top|fill_horizontal">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:endColor="@color/palm_cream"
+                android:startColor="?attr/warnaUtamaLembut" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran hiasan besar -->
+    <item
+        android:width="220dp"
+        android:height="220dp"
+        android:gravity="top|end"
+        android:right="-70dp"
+        android:top="-80dp">
+        <shape android:shape="oval">
+            <solid android:color="#14FFFFFF" />
+            <stroke
+                android:width="18dp"
+                android:color="?attr/warnaUtamaLembut" />
+        </shape>
+    </item>
+
+    <!-- Lingkaran hiasan kecil -->
+    <item
+        android:width="90dp"
+        android:height="90dp"
+        android:gravity="top|end"
+        android:right="110dp"
+        android:top="-30dp">
+        <shape android:shape="oval">
+            <solid android:color="?attr/warnaUtamaLembut" />
+        </shape>
+    </item>
+</layer-list>

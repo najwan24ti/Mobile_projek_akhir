@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Satu halaman onboarding: ilustrasi + judul + penjelasan -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="32dp">
+
+    <FrameLayout
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:background="@drawable/bg_onboarding_ilustrasi">
+
+        <ImageView
+            android:id="@+id/imgIlustrasi"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            app:tint="?attr/warnaUtamaGelap"
+            tools:src="@drawable/ic_eco" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textColor="@color/palm_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Catat panen &amp; penjualan TBS" />
+
+    <TextView
+        android:id="@+id/txtDeskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/palm_text_muted"
+        android:textSize="15sp"
+        tools:text="Isi berat bruto, sortasi, dan harga. Total yang diterima langsung dihitung otomatis." />
+</LinearLayout>

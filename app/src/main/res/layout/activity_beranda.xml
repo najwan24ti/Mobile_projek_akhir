@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/palm_cream"
+    android:background="@drawable/bg_beranda"
     android:orientation="vertical"
     tools:context=".palmsys.beranda.BerandaActivity">
 
@@ -211,29 +211,18 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Menu cepat -->
-            <LinearLayout
+            <!-- Menu cepat: grid 4 kolom memakai RecyclerView + GridLayoutManager -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/daftarMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:orientation="horizontal">
-
-                <include
-                    android:id="@+id/menuCatatPanen"
-                    layout="@layout/item_menu_beranda" />
-
-                <include
-                    android:id="@+id/menuPengeluaran"
-                    layout="@layout/item_menu_beranda" />
-
-                <include
-                    android:id="@+id/menuBlokKebun"
-                    layout="@layout/item_menu_beranda" />
-
-                <include
-                    android:id="@+id/menuKalkulator"
-                    layout="@layout/item_menu_beranda" />
-            </LinearLayout>
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                tools:itemCount="8"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_menu_beranda"
+                tools:spanCount="4" />
 
             <!-- Harga TBS hari ini -->
             <LinearLayout
