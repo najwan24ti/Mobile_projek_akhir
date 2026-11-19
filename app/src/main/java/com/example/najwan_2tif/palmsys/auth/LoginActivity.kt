@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,6 +19,17 @@ import com.example.najwan_2tif.palmsys.beranda.BerandaActivity
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
+
+    /** Buka halaman Daftar; kalau berhasil, akun yang baru dibuat langsung diisikan di form login. */
+    private val bukaDaftar =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { hasil ->
+            val akunBaru = hasil.data?.getStringExtra(DaftarActivity.EXTRA_AKUN)
+            if (hasil.resultCode == RESULT_OK && akunBaru != null) {
+                binding.inputAkun.setText(akunBaru)
+                binding.inputPassword.text = null
+                binding.inputPassword.requestFocus()
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +79,7 @@ class LoginActivity : BaseActivity() {
             tampilkanPesan(getString(R.string.segera_hadir, getString(R.string.login_sidik_jari)))
         }
         binding.txtDaftar.setOnClickListener {
-            tampilkanPesan(getString(R.string.segera_hadir, getString(R.string.login_daftar)))
+            bukaDaftar.launch(Intent(this, DaftarActivity::class.java))
         }
     }
 
@@ -81,11 +93,18 @@ class LoginActivity : BaseActivity() {
             if (password.isEmpty()) getString(R.string.login_error_password) else null
         if (akun.isEmpty() || password.isEmpty()) return
 
+        // Akun yang sudah didaftarkan: kata sandinya harus cocok
+        val terdaftar = PenyimpananAkun.cari(this, akun)
+        if (terdaftar != null && terdaftar.hashSandi != PenyimpananAkun.hash(password)) {
+            binding.layoutPassword.error = getString(R.string.login_error_sandi_salah)
+            return
+        }
+
         getSharedPreferences(PREFS, MODE_PRIVATE).edit {
             if (binding.cbIngat.isChecked) putString(KEY_AKUN, akun) else remove(KEY_AKUN)
         }
 
-        val nama = namaTampilan(akun)
+        val nama = terdaftar?.nama ?: namaTampilan(akun)
         tampilkanPesan(getString(R.string.login_success, nama))
         startActivity(
             Intent(this, BerandaActivity::class.java)

@@ -13,6 +13,7 @@ import androidx.core.view.isVisible
 import com.example.najwan_2tif.R
 import com.example.najwan_2tif.databinding.ActivityProfilBinding
 import com.example.najwan_2tif.palmsys.auth.LoginActivity
+import com.example.najwan_2tif.palmsys.auth.PenyimpananAkun
 import com.example.najwan_2tif.palmsys.pengaturan.PengaturanActivity
 import com.example.najwan_2tif.palmsys.pengaturan.Tema
 import com.example.najwan_2tif.palmsys.util.BaseActivity
@@ -56,6 +57,12 @@ class ProfilActivity : BaseActivity() {
         val akun = intent.getStringExtra(EXTRA_AKUN).orEmpty()
         binding.txtAkun.text = akun
         binding.txtAkun.isVisible = akun.isNotBlank()
+
+        // Kalau akun ini dibuat lewat halaman Daftar, tampilkan lokasi & luas kebun dari data pendaftaran
+        PenyimpananAkun.cari(this, akun)?.let { terdaftar ->
+            binding.txtLokasi.text = terdaftar.lokasi
+            binding.txtLuas.text = getString(R.string.profil_luas_format, terdaftar.luasKebun.replace('.', ','))
+        }
     }
 
     private fun tampilkanMenu() {

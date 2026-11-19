@@ -1,6 +1,6 @@
 # Struktur Proyek PalmSys
 
-Alur aplikasi: **Onboarding → Login → Beranda → Catat Penjualan TBS / Semua Transaksi / Profil → Pengaturan**
+Alur aplikasi: **Onboarding → Login (atau Daftar) → Beranda → Catat Penjualan TBS / Semua Transaksi / Profil → Pengaturan**
 
 ## Kode Kotlin
 `app/src/main/java/com/example/najwan_2tif/palmsys/`
@@ -10,6 +10,8 @@ Alur aplikasi: **Onboarding → Login → Beranda → Catat Penjualan TBS / Semu
 | `onboarding/` | `OnboardingActivity.kt` | Layar pengenalan 3 halaman (ViewPager2), muncul sekali saat pertama buka |
 | `onboarding/` | `OnboardingAdapter.kt`, `HalamanOnboarding.kt` | Adapter + data tiap halaman onboarding |
 | `auth/` | `LoginActivity.kt` | Halaman login |
+| `auth/` | `DaftarActivity.kt` | Halaman registrasi akun baru (validasi isian) |
+| `auth/` | `PenyimpananAkun.kt` | Simpan & cari akun di HP; kata sandi disimpan sebagai hash SHA-256 |
 | `beranda/` | `BerandaActivity.kt` | Halaman beranda (saldo, menu, transaksi terakhir) |
 | `beranda/` | `MenuBerandaAdapter.kt`, `MenuBeranda.kt` | **RecyclerView** grid menu 4 kolom di Beranda |
 | `beranda/` | `Transaksi.kt` | Model data satu transaksi |

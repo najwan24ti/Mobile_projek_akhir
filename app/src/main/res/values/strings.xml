@@ -34,6 +34,33 @@
     <string name="login_error_password">Kata sandi wajib diisi</string>
     <string name="login_success">Selamat datang, %1$s</string>
     <string name="login_forgot_info">Hubungi admin untuk reset kata sandi</string>
+    <string name="login_error_sandi_salah">Kata sandi salah</string>
+
+    <!-- Daftar (registrasi) -->
+    <string name="daftar_judul">Buat akun baru</string>
+    <string name="daftar_subjudul">Daftar untuk mulai mencatat kebun sawitmu</string>
+    <string name="daftar_bagian_akun">Data diri</string>
+    <string name="daftar_bagian_kebun">Data kebun</string>
+    <string name="daftar_bagian_keamanan">Keamanan</string>
+    <string name="daftar_nama">Nama lengkap</string>
+    <string name="daftar_akun_bantuan">Dipakai untuk masuk. Contoh: 08123456789 atau nama@mail.com</string>
+    <string name="daftar_lokasi">Lokasi kebun (desa, kabupaten)</string>
+    <string name="daftar_luas">Luas kebun</string>
+    <string name="daftar_luas_satuan">ha</string>
+    <string name="daftar_sandi_bantuan">Minimal 6 karakter</string>
+    <string name="daftar_ulang_sandi">Ulangi kata sandi</string>
+    <string name="daftar_setuju">Saya setuju dengan syarat &amp; ketentuan PalmSys</string>
+    <string name="daftar_tombol">Daftar Sekarang</string>
+    <string name="daftar_sudah_punya">Sudah punya akun?</string>
+    <string name="daftar_error_nama">Nama minimal 3 huruf</string>
+    <string name="daftar_error_akun">Isi nomor HP (08…) atau email yang benar</string>
+    <string name="daftar_error_akun_terdaftar">Akun ini sudah terdaftar, silakan masuk</string>
+    <string name="daftar_error_lokasi">Lokasi kebun wajib diisi</string>
+    <string name="daftar_error_luas">Isi luas kebun dalam hektar</string>
+    <string name="daftar_error_sandi">Kata sandi minimal 6 karakter</string>
+    <string name="daftar_error_ulang_sandi">Kata sandi tidak sama</string>
+    <string name="daftar_error_setuju">Centang persetujuan terlebih dahulu</string>
+    <string name="daftar_berhasil">Akun berhasil dibuat, silakan masuk</string>
 
     <!-- Beranda -->
     <string name="beranda_pagi">Selamat pagi,</string>
@@ -85,6 +112,7 @@
     <string name="profil_lokasi">Desa Api-Api, Bengkalis, Riau</string>
     <string name="profil_luas">Luas kebun</string>
     <string name="profil_luas_nilai">12,5 ha</string>
+    <string name="profil_luas_format">%1$s ha</string>
     <string name="profil_blok">Blok</string>
     <string name="profil_blok_nilai">3</string>
     <string name="profil_pekerja">Pekerja</string>

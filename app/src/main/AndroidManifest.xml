@@ -34,6 +34,13 @@
             android:theme="@style/Theme.PalmSys"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- 1b. Daftar / registrasi akun (dari tombol Daftar di Login) -->
+        <activity
+            android:name=".palmsys.auth.DaftarActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PalmSys"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- 2. Beranda -->
         <activity
             android:name=".palmsys.beranda.BerandaActivity"
